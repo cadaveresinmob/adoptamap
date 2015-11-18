@@ -77,10 +77,10 @@ function addDataToMap(data,markerStyle) {
 					className: 'popup-desenterrado'
 				});
 			}
-			if ( feature.properties.name.length == 0 ) { //The "desenterrados" at http://cadaveresinmobiliarios.org/adopta-un-cadaver-inmobiliario/desentierra-un-cadaver-inmobiliario/ only have description, so if we check if name is empty we can display the "description" only for these ones.
+			if ( feature.properties.name == '' ) { //The "desenterrados" at http://cadaveresinmobiliarios.org/adopta-un-cadaver-inmobiliario/desentierra-un-cadaver-inmobiliario/ only have description and latitude-longitude, so if we check if name is empty we can display the "description" only for these ones.
 				var popupContent = "<p>" + feature.properties.description + "</p>";
 				layer.bindPopup(popupContent, {
-					className: 'popup-desenterrado'
+					className: 'popup-desenterrado-form'
 				});
 			}
 			if ( feature.properties.nombre_promocional ) {
